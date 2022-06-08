@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="701.934">
+    <testcase classname="Functionality of Dictionary application" name="Successful logo" time="94.616">
+        <system-out><![CDATA[Given User navigates to "https://dictionary.cambridge.org"..................passed
+When user finds the logo....................................................passed
+Then user validate the logo.................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="User learns new word from word of the year" time="122.088">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+When user scrolls...........................................................passed
+And user clicks on word of the year.........................................passed
+Then user finds word of the year............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="user use dictionay to get meaning of the words" time="91.533">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+Then user enters AVALANCHE to get meaning...................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="user use dictionay to get meaning of the words 2" time="61.067">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+Then user enters HYSTERICAL to get meaning..................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="user use dictionay to get meaning of the words 3" time="72.998">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+Then user enters TURNCOAT to get meaning....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="user listens to British English Pronounciation" time="74.433">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+Then user seacrh for word to listen in British English Pronounciation.......passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="user looks for cambridge dictionary facebook page" time="30.373">
+        <system-out><![CDATA[When user clicks on facebook logo...........................................passed
+Then user navigate to cambridge dictionary facebook page....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Functionality of Dictionary application" name="user search for invalid words" time="153.571">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+When user enters invalid words error message is displayed...................passed
+]]></system-out>
+    </testcase>
+</testsuite>

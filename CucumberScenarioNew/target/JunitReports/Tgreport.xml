@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="482.16">
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Adjectives and adverb  through grammer" time="96.767">
+        <system-out><![CDATA[Given user navigates to "https://dictionary.cambridge.org"..................passed
+When user click on the grammar..............................................passed
+And user click on the adjectives and adverbs................................passed
+Then user is able to learn about adjectives and adverbs.....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Easily confused words through grammer link" time="58.867">
+        <system-out><![CDATA[Given user is in home page..................................................passed
+When user click on the Grammar link.........................................passed
+And user click on the Easily confused words link............................passed
+Then user is able to learn about Easily confused words......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Nouns, pronouns and determiners through grammer link" time="124.172">
+        <system-out><![CDATA[Given user navigated to the Cambridge Dictionary website....................passed
+When user click on the Grammar link.........................................passed
+And user click on the Nouns, pronouns and determiners link..................passed
+Then user is able to learn about Nouns, pronouns and determiners............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Prepositions and particles through grammer link" time="27.705">
+        <system-out><![CDATA[Given user navigated to the Cambridge Dictionary website....................passed
+When user click on the Grammar link.........................................passed
+And user click on the Prepositions and particles link.......................passed
+Then user is able to learn about Prepositions and particles.................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Using English through grammer link" time="36.24">
+        <system-out><![CDATA[Given user navigated to the Cambridge Dictionary website....................passed
+When user click on the Grammar link.........................................passed
+And user click on the Using English link....................................passed
+Then user is able to learn about Using English..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Verbs through grammer link" time="45.03">
+        <system-out><![CDATA[Given user navigated to the Cambridge Dictionary website....................passed
+When user click on the Grammar link.........................................passed
+And user click on the Verbs link............................................passed
+Then user is able to learn about Verbs......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="check user learns about Words,Sentences and Clauses through grammer link" time="22.175">
+        <system-out><![CDATA[Given user navigated to the Cambridge Dictionary website....................passed
+When user click on the Grammar link.........................................passed
+And user click on the Words,Sentences and Clauses link......................passed
+Then user is able to learn about Words, sentences and clauses...............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Translater and Grammer Functionality" name="user translate a sentence from english to japanese" time="70.228">
+        <system-out><![CDATA[Given user navigated to the Cambridge Dictionary website....................passed
+When user clicks on English to japanese traslation..........................passed
+And search for sentence and get transalation................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
