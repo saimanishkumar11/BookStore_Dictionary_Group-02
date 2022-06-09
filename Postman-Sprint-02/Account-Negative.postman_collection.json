@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "7991d05f-caa0-49f1-8eaa-655afde98889",
+		"name": "Account-Negative",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21165003"
+	},
+	"item": [
+		{
+			"name": "GenerateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify status \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"Failed\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Verify result \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(\"User authorization failed.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"KrishnaMurt\",\r\n  \"password\": \"Manish@1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{reource_path1}}",
+					"host": [
+						"{{url}}{{reource_path1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify status value\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"User not authorized!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "manish@12",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "KrishnaMurthy",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{resource_path3}}b5d21111-1b5f-4644-b32c-717a98a185cf",
+					"host": [
+						"{{url}}{{resource_path3}}b5d21111-1b5f-4644-b32c-717a98a185cf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

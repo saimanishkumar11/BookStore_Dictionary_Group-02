@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "982baac1-8aea-4eab-8866-751363d54e4e",
+		"name": "GetMockServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21165003"
+	},
+	"item": [
+		{
+			"name": "BookStore/v1/Book?ISBN=9781449331818",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify title\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Git Pocket Guide\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"server is present\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify isnb\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.isbn).to.eql(\"9781449325862\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify subtitle\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.subTitle).to.eql(\"A Working Introduction\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify published date\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.publish_date).to.eql(\"2020-06-04T08:48:39.000Z\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://edf3656c-05be-4d8c-91e0-91239e2cbec8.mock.pstmn.io/BookStore/v1/Book?ISBN=9781449331818",
+					"protocol": "https",
+					"host": [
+						"edf3656c-05be-4d8c-91e0-91239e2cbec8",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Book"
+					],
+					"query": [
+						{
+							"key": "ISBN",
+							"value": "9781449331818"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/BookStore/v1/Book?ISBN=9781449331818",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"BookStore",
+								"v1",
+								"Book"
+							],
+							"query": [
+								{
+									"key": "ISBN",
+									"value": "9781449331818"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"isbn\": \"9781449325862\",\n    \"title\": \"Git Pocket Guide\",\n    \"subTitle\": \"A Working Introduction\",\n    \"author\": \"Richard E. Silverman\",\n    \"publish_date\": \"2020-06-04T08:48:39.000Z\",\n    \"publisher\": \"O'Reilly Media\",\n    \"pages\": 234,\n    \"description\": \"This pocket guide is the perfect on-the-job companion to Git, the distributed version control system. It provides a compact, readable introduction to Git for new users, as well as a reference to common commands and procedures for those of you with Git exp\",\n    \"website\": \"http://chimera.labs.oreilly.com/books/1230000000561/index.html\"\n}"
+				}
+			]
+		}
+	]
+}

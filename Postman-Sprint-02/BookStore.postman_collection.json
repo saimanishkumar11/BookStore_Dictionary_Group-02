@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "6b344ec3-0fa8-4e69-847a-0fa13a3e528f",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21165003"
+	},
+	"item": [
+		{
+			"name": "GetBooks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"/*pm.test(\"Validation\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.globals.set(\"isbn\", jsonData.value);    \r",
+							"});*/\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"server is present\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"server is present\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"resource_path5\", \"BookStore/v1/Books\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{resourse_path5}}",
+					"host": [
+						"{{url}}{{resourse_path5}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book with its ISBN#",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify title\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Git Pocket Guide\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"server is present\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify isnb\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.isbn).to.eql(\"9781449325862\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify subtitle\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.subTitle).to.eql(\"A Working Introduction\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify published date\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.publish_date).to.eql(\"2020-06-04T08:48:39.000Z\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"resource_path6\", \"BookStore/v1/Book?\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{resource_path6}}ISBN=9781449325862",
+					"host": [
+						"{{url}}{{resource_path6}}ISBN=9781449325862"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "book with its ISBN#",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}{{resource_path6}}ISBN=9781449325862",
+							"host": [
+								"{{url}}{{resource_path6}}ISBN=9781449325862"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "book to the store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"if(pm.response.json().responseCode==200){\r",
+							"    pm.globals.set(\"responseCode,pm.responseCode.json().responseCode\")\r",
+							"}\r",
+							"else{\r",
+							"    console.log(\"Adding book to the store is unsuccessfull\")\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify message\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"User Id not correct!\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify code\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.eql(\"1207\")\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"reource_path7\", \"BookStore/v1/Books\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik1hbmlzaCIsInBhc3N3b3JkIjoibWFuaXNoQDEyMyIsImlhdCI6MTY1NDE0MjgwNn0.iIwz1sdtH8iXYd1cYSrkTm_WUi79RMyd9540W6jzNNI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"{{userId}}\",\r\n  \"collectionOfIsbns\": [\r\n    {\r\n      \"isbn\": \"{{isbn}}\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{reource_path7}}",
+					"host": [
+						"{{url}}{{reource_path7}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify a book details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"if(pm.response.json().responseCode==200){\r",
+							"    pm.globals.set(\"responseCode,pm.responseCode.json().responseCode\")\r",
+							"}\r",
+							"else{\r",
+							"    console.log(\"Modifying book to the store is unsuccessfull\")\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify message\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"User not authorized!\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify code\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.eql(\"1200\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"reource_path8\", \"BookStore/v1/Books/\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\":\"{{userId}}\",\r\n  \"isbn\":\"{{isbn}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{reource_path8}}9781449331818",
+					"host": [
+						"{{url}}{{reource_path8}}9781449331818"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"if(pm.response.json().responseCode==200){\r",
+							"    pm.globals.set(\"responseCode,pm.responseCode.json().responseCode\")\r",
+							"}\r",
+							"else{\r",
+							"    console.log(\"Deleting book from the store is unsuccessfull\")\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify message\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"User Id not correct!\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify code\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.eql(\"1207\")\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"resource_path9\", \"BookStore/v1/Books?\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{resource_path9}}UserId=b5d21111-1b5f-4644-b32c-717a98a185cf",
+					"host": [
+						"{{url}}{{resource_path9}}UserId=b5d21111-1b5f-4644-b32c-717a98a185cf"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a book",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}{{resource_path9}}UserId=b5d21111-1b5f-4644-b32c-717a98a185cf",
+							"host": [
+								"{{url}}{{resource_path9}}UserId=b5d21111-1b5f-4644-b32c-717a98a185cf"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete a book with a valid User ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the bench mark for response time is 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"if(pm.response.json().responseCode==200){\r",
+							"    pm.globals.set(\"responseCode,pm.responseCode.json().responseCode\")\r",
+							"}\r",
+							"else{\r",
+							"    console.log(\"Deleting book from the store is unsuccessfull\")\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify message\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"User Id not correct!\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"verify code\", function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.eql(\"1207\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"resource_path10\", \"BookStore/v1/Book\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"isbn\": \"{{isbn}}\",\r\n  \"userId\": \"{{userId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{resource_path10}}",
+					"host": [
+						"{{url}}{{resource_path10}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik1hbmlzaCIsInBhc3N3b3JkIjoibWFuaXNoQDEyMyIsImlhdCI6MTY1NDE0MjgwNn0.iIwz1sdtH8iXYd1cYSrkTm_WUi79RMyd9540W6jzNNI",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is as per the response body\", function () {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200,201,400,404,406,401])",
+					"});"
+				]
+			}
+		}
+	]
+}
